@@ -29,9 +29,9 @@ class Scraper
     social_doc.css("a").each do |href|
       
     
-    case  href.attr('href')
+    case href.attr('href')
   
-   
+      
       binding.pry
    
     end
