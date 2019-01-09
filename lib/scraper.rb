@@ -39,9 +39,8 @@ class Scraper
         holder_hash << :linkedin => href_var
       when .include? "github.com"
         holder_hash << :github => href_var
-      when .include? "youtube.com"
-        holder_hash << :twitter => href_var
-    
+      else 
+        holder_hash << :blog => href_var
     end
    end
   end
