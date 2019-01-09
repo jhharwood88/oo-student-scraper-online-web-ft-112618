@@ -31,7 +31,7 @@ class Scraper
     
     case href.attr('href')
   
-      
+      when .include? ""
       binding.pry
    
     end
