@@ -44,8 +44,9 @@ class Scraper
      
      else 
        holder_hash.merge! ({:blog => href_var})
-   end
-   end
+     end
+    end
+   holder_hash
   end
   
 end
