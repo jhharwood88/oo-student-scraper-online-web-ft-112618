@@ -14,14 +14,29 @@ class Scraper
     doc.css(".student-card").each do |student|
     scraped_students << {:name => student.css("h4").text , :location => student.css("p").text , :profile_url => student.css("a")[0]["href"]}
     end
+    
     scraped_students
+    
   end
+
+
 
   def self.scrape_profile_page(profile_url)
     
     profile_doc = Nokogiri::HTML(open(profile_url)) 
     
-    profile_doc.css(".social-icon-container").each do |profile|
+    social_doc = profile_doc.css(".social-icon-container")
+    social_doc.css("a").each do |href|
+      
+      #[22] pry(Scraper)> social_doc.css("a")[3]["href"]
+      #  => "http://joemburgess.com/"
+      
+  
+   
+      binding.pry
+   
+    end
     
-    binding.pry
   end
+  
+end
