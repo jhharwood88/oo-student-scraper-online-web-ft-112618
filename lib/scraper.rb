@@ -28,10 +28,11 @@ class Scraper
     social_doc = profile_doc.css(".social-icon-container")
       
     holder_hash = {}  
+    binding.pry
     social_doc.css("a").each do |href|
     
     href_var = href.attr('href')
-    binding.pry
+    
       if href_var.include? "twitter.com"
         holder_hash << :twitter => href_var
       elsif href_var.include? "linkedin.com"
