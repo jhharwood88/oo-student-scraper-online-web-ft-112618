@@ -33,15 +33,15 @@ class Scraper
     
     href_var = href.attr('href')
     binding.pry
-  #    if href_var.include? "twitter.com"
-  #      holder_hash.merge! ({:twitter => href_var})
-  #    elsif href_var.include? "linkedin.com"
-  #      holder_hash.merge! (:linkedin => href_var})
-  #    elsif href_var.include? "github.com"
-  #      holder_hash << {:github => href_var}
-  #    else 
-  #      holder_hash << {:blog => href_var}
-  #  end
+     if href_var.include? "twitter.com"
+       holder_hash.merge! ({:twitter => href_var})
+     elsif href_var.include? "linkedin.com"
+       holder_hash.merge! (:linkedin => href_var})
+     elsif href_var.include? "github.com"
+       holder_hash.merge! ({:github => href_var})
+     else 
+       holder_hash.merge! ({:blog => href_var})
+   end
    end
   end
   
