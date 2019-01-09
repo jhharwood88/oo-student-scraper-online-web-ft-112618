@@ -34,7 +34,7 @@ class Scraper
     href_var = href.attr('href')
     
       if href_var.include? "twitter.com"
-        holder_hash << {:twitter => href_var}
+        holder_hash += {:twitter => href_var}
       elsif href_var.include? "linkedin.com"
         holder_hash << {:linkedin => href_var}
       elsif href_var.include? "github.com"
