@@ -31,13 +31,12 @@ class Scraper
     social_doc.css("a").each do |href|
     
     href_var = href.attr('href')
-    case href_var
-  
-      when .include? "twitter.com"
+    
+      if .include? "twitter.com"
         holder_hash << :twitter => href_var
-      when .include? "linkedin.com"
+      elsif .include? "linkedin.com"
         holder_hash << :linkedin => href_var
-      when .include? "github.com"
+      elsif .include? "github.com"
         holder_hash << :github => href_var
       else 
         holder_hash << :blog => href_var
