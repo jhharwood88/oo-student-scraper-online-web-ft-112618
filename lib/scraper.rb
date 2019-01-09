@@ -28,15 +28,14 @@ class Scraper
     social_doc = profile_doc.css(".social-icon-container")
     social_doc.css("a").each do |href|
       
-      #[22] pry(Scraper)> social_doc.css("a")[3]["href"]
-      #  => "http://joemburgess.com/"
-      
+    
+    case  href.attr('href')
   
    
       binding.pry
    
     end
-    
+   end
   end
   
 end
