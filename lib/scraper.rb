@@ -32,7 +32,7 @@ class Scraper
     social_doc.css("a").each do |href|
     
     href_var = href.attr('href')
-    binding.pry
+    #binding.pry
      if href_var.include? "twitter.com"
        holder_hash.merge! ({:twitter => href_var})
      elsif href_var.include? "linkedin.com"
