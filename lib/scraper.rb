@@ -24,16 +24,24 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     
     profile_doc = Nokogiri::HTML(open(profile_url)) 
-    
+  
     social_doc = profile_doc.css(".social-icon-container")
-    social_doc.css("a").each do |href|
       
+    holder_hash = {}  
+    social_doc.css("a").each do |href|
     
-    case href.attr('href')
+    href_var = href.attr('href')
+    case href_var
   
       when .include? "twitter.com"
-      binding.pry
-   
+        holder_hash << :twitter => href_var
+      when .include? "linkedin.com"
+        holder_hash << :linkedin => href_var
+      when .include? "github.com"
+        holder_hash << :github => href_var
+      when .include? "youtube.com"
+        holder_hash << :twitter => href_var
+    
     end
    end
   end
